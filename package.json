@@ -1,0 +1,26 @@
+{
+  "name": "aw-fquery",
+  "version": "0.0.1",
+  "description": "Fountain Query",
+  "main": "fquery.js",
+  "scripts": {
+    "build": "browserify -s 'aw-fquery' fquery.js -o dist/aw-fquery.amd.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://ifrost@github.com/afterwriting/aw-fquery.git"
+  },
+  "keywords": [
+    "fountain",
+    "query"
+  ],
+  "author": "Piotr Jamroz <pm.jamroz@gmail.com> (https://about.me/piotr.jamroz)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/afterwriting/aw-fquery/issues"
+  },
+  "homepage": "https://github.com/afterwriting/aw-fquery#readme",
+  "devDependencies": {
+    "aw-parser": "0.0.1"
+  }
+}
