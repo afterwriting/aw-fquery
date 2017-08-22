@@ -11,7 +11,7 @@ var fquerybuilder = function(key_name, base, config) {
 
     var fquery = {
         flat: !key_name,
-        key_name: key_name || '___',
+        key_name: key_name || "___",
         base: base,
         processors: [],
         result: [],
