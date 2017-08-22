@@ -1,0 +1,82 @@
+<html>
+<head>
+    <script type="text/javascript" src="node_modules/aw-parser/dist/aw-parser.amd.js"></script>
+    <script type="text/javascript" src="dist/aw-fquery.amd.js"></script>
+</head>
+<body>
+
+<textarea id="editor">
+
+Title: Test Script
+Author: John Doe
+
+INT. TEST - DAY
+
+Action test. Action test. Action test. Action test. Action test. Action test. Action test. Action test. Action test.
+
+HERO 1
+Hello --
+Hello!
+
+HERO 2
+Hello
+</textarea>
+
+<p id="results"></p>
+
+<script type="text/javascript">
+
+    var CHARACTERS_QUERY, FQ;
+
+    function getEditor() {
+        return document.getElementById('editor');
+    }
+
+    function getResults() {
+        return document.getElementById('results');
+    }
+
+    function createQuery() {
+        CHARACTERS_QUERY = FQ.factory('name', {occurrences: 0});
+
+        CHARACTERS_QUERY.enter(FQ.ops.is('character'), function(item, fq) {
+            var selector = fq.select(item.name());
+            selector.occurrences++;
+        });
+    }
+
+    function parse() {
+        var script, result;
+
+        getResults().innerHTML = '';
+
+        script = getEditor().value;
+        result = awParser.parser.parse(script, {
+            print_actions: true,
+            print_dialogues: true,
+            print_synopsis: true,
+            print_sections: true,
+            print_headers: true,
+            print_notes: true
+        });
+
+        var characters = CHARACTERS_QUERY.run(result.tokens);
+        var html = '';
+        for (var character in characters) {
+            html += characters[character].name + ' (occurrences: ' + characters[character].occurrences + ')<br />';
+        }
+        getResults().innerHTML = html;
+    }
+
+    window.onload = function() {
+        FQ = awFquery(awParser.helpers);
+        createQuery();
+
+        getEditor().onkeyup = parse;
+        parse();
+    }
+
+</script>
+
+</body>
+</html>
