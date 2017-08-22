@@ -16,12 +16,21 @@ function getRepoUrl() {
 }
 
 function getCurrentTag() {
-    return execSync("git describe --abbrev=0", {encoding: "utf-8"}).trim();
+    try {
+        return execSync("git describe --abbrev=0", {encoding: "utf-8"}).trim();
+    }
+    catch (e) {
+        return null;
+    }
 }
 
-function getChanges(currentTag, repoUrl) {
+function getFirstCommit() {
+    return execSync("git rev-list --max-parents=0 HEAD", {encoding: "utf-8"}).trim();
+}
+
+function getChanges(from, repoUrl) {
     var prettyFormat = "\"* [[`%h`](" + repoUrl + "commit/%h)] - %s\"";
-    var listChangesCommand =  "git log " + currentTag + "..HEAD --pretty=format:" + prettyFormat;
+    var listChangesCommand =  "git log " + from + "..HEAD --pretty=format:" + prettyFormat;
     return execSync(listChangesCommand, {encoding: "utf-8"});
 }
 
@@ -39,9 +48,9 @@ function main() {
         return;
     }
 
-    var currentTag = getCurrentTag();
+    var from = getCurrentTag() || getFirstCommit();
     var repoUrl = getRepoUrl();
-    var changes = getChanges(currentTag, repoUrl);
+    var changes = getChanges(from, repoUrl);
     var log = "Changes:\n\n" + changes;
 
     if (process.argv[3] === "console") {
