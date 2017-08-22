@@ -7,7 +7,7 @@ module.exports = {
     output: {
         filename: 'aw-fquery.amd.js',
         libraryTarget: "umd",
-        library: 'awFQuery',
+        library: 'awFquery',
         path: path.resolve(__dirname, 'dist')
     }
 };
