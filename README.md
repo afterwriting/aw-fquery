@@ -1,2 +1,4 @@
 # aw-fquery
-Fountain Query
+
+[![npm version](https://badge.fury.io/js/aw-fquery.svg)](https://badge.fury.io/js/aw-fquery) [![Build Status](https://travis-ci.org/afterwriting/aw-fquery.svg?branch=master)](https://travis-ci.org/afterwriting/aw-fquery) [![codecov](https://codecov.io/gh/afterwriting/aw-fquery/branch/master/graph/badge.svg)](https://codecov.io/gh/afterwriting/aw-fquery) [![Known Vulnerabilities](https://snyk.io/test/github/afterwriting/aw-fquery/badge.svg)](https://snyk.io/test/github/afterwriting/aw-fquery) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/4d74413bec474d5eb181eb5443f83259)](https://www.codacy.com/app/ifrost/aw-fquery?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=afterwriting/aw-fquery&amp;utm_campaign=Badge_Grade) [![Greenkeeper badge](https://badges.greenkeeper.io/afterwriting/aw-fquery.svg)](https://greenkeeper.io/)
+
