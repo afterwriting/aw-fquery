@@ -32,7 +32,7 @@
   "devDependencies": {
     "aw-parser": "0.0.6",
     "chai": "^4.0.2",
-    "codecov": "^2.2.0",
+    "codecov": "^3.0.0",
     "docdash": "^0.4.0",
     "eslint": "^4.0.0",
     "istanbul": "^0.4.5",
