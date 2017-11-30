@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/afterwriting/aw-fquery#readme",
   "devDependencies": {
-    "aw-parser": "0.0.6",
+    "aw-parser": "0.0.7",
     "chai": "^4.0.2",
     "codecov": "^3.0.0",
     "docdash": "^0.4.0",
