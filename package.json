@@ -1,6 +1,6 @@
 {
   "name": "aw-fquery",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Fountain Query",
   "main": "fquery.js",
   "scripts": {
